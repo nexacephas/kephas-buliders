@@ -1,0 +1,8 @@
+<svg width="1200" height="500" viewBox="0 0 1200 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="1200" height="500" fill="transparent"/>
+  <rect x="80" y="65" width="355" height="355" rx="42" fill="#11263B"/>
+  <path d="M153 94H214L295 210L364 94H425L332 240L432 410H370L287 309L213 410H153L245 240L153 94Z" fill="#4CE2D2"/>
+  <path d="M224 156H273L343 248L286 321L224 156Z" fill="#4CE2D2"/>
+  <path d="M148 122L297 245L154 374H203L352 245L203 122H148Z" fill="#5DE6D8" fill-opacity="0.92"/>
+  <text x="470" y="305" fill="#11263B" font-family="Segoe UI, Arial, sans-serif" font-size="220" font-weight="800" letter-spacing="8">KEPHAS</text>
+</svg>
