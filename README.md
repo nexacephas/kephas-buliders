@@ -76,12 +76,21 @@ See .env.example for the required configuration values including:
 
 ## Deployment preparation
 
-- Set all environment variables in your hosting environment.
-- Use a production MongoDB Atlas connection string.
-- Configure Resend for your verified sender domain.
-- Set trusted ADMIN_USERNAME and ADMIN_PASSWORD values.
-- Ensure your frontend uses the deployed API URL via VITE_API_URL.
-- Enable HTTPS and restrict admin routes behind authentication.
+### Vercel frontend
+
+- Connect the frontend GitHub repository to Vercel with the repository root as the project root.
+- Build command: `npm run build`.
+- Output directory: `dist`.
+- Add `VITE_API_URL` in Vercel Project Settings → Environment Variables with the value `https://kephas-server.onrender.com/api`, then redeploy. The value is not a secret and is intentionally not stored in a committed environment file.
+- `vercel.json` rewrites direct route requests to the React app so `/admin/login`, `/admin/dashboard`, and `/registration/success` work after refresh.
+
+### Render backend
+
+- Deploy the separate `server` repository as a Node web service with build command `npm ci` and start command `npm start`.
+- Set `CLIENT_URL` to the exact Vercel site origin.
+- Configure `MONGODB_URI`, `JWT_SECRET`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`, `ADMIN_EMAIL`, `RESEND_API_KEY`, and `EMAIL_FROM` in Render's environment settings. Use a production MongoDB Atlas connection string and a verified Resend sender domain.
+- Confirm `/api/health` reports `database: connected` before accepting registrations; the in-memory fallback is not durable.
+- Enable HTTPS and keep all credentials in hosting environment settings, never in Git.
 
 ## Security notes
 
