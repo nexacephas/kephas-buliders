@@ -668,12 +668,30 @@ small {
   margin: -7px 0 2px 14px;
 }
 
+.selection-error {
+  display: block;
+  margin-top: 8px;
+}
+
 .form-status {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   padding: 0.9rem 1rem;
   border-radius: 14px;
   font-weight: 600;
+}
+
+.form-status p {
+  margin: 0;
+}
+
+.form-status ul {
+  display: grid;
+  gap: 4px;
+  margin: 8px 0 0;
+  padding-left: 1.25rem;
+  font-weight: 400;
 }
 
 .form-status.success {

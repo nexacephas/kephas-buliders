@@ -48,6 +48,24 @@ const learningOptions = [
 
 const weekendOptions = ['Saturday', 'Sunday'];
 
+const validationFieldLabels = {
+  parentFullName: 'Parent / guardian full name',
+  parentEmail: 'Parent email',
+  parentPhone: 'Parent phone',
+  relationship: 'Relationship to child',
+  childFullName: 'Child full name',
+  childDob: 'Date of birth',
+  childGender: 'Gender',
+  schoolLevel: 'School level',
+  technologyAccess: 'Technology access',
+  hasDevice: 'Personal device',
+  learningInterests: 'Learning interests',
+  weekendAvailability: 'Weekend availability',
+  expectations: 'Expectations',
+  guardianConsent: 'Guardian consent',
+  privacyConsent: 'Privacy consent'
+};
+
 const programmeCards = [
   {
     title: 'Web Development',
@@ -130,6 +148,12 @@ export default function App() {
 
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
+    setErrors((previous) => {
+      const next = { ...previous };
+      delete next[name];
+      return next;
+    });
+    setStatus({ type: '', message: '' });
 
     if (type === 'checkbox') {
       setForm((prev) => ({ ...prev, [name]: checked }));
@@ -140,6 +164,12 @@ export default function App() {
   };
 
   const handleMultiSelect = (name, value) => {
+    setErrors((previous) => {
+      const next = { ...previous };
+      delete next[name];
+      return next;
+    });
+    setStatus({ type: '', message: '' });
     setForm((prev) => {
       const current = prev[name] || [];
       const alreadySelected = current.includes(value);
@@ -317,6 +347,7 @@ export default function App() {
                       <option>Guardian</option>
                       <option>Carer</option>
                     </select>
+                    {fieldError(errors, 'relationship') && <small>{fieldError(errors, 'relationship')}</small>}
                   </div>
                 </div>
 
@@ -421,6 +452,7 @@ export default function App() {
                     </button>
                   ))}
                 </div>
+                {fieldError(errors, 'learningInterests') && <small className="selection-error">{fieldError(errors, 'learningInterests')}</small>}
               </div>
 
               <div className="field-section">
@@ -442,6 +474,7 @@ export default function App() {
                     </button>
                   ))}
                 </div>
+                {fieldError(errors, 'weekendAvailability') && <small className="selection-error">{fieldError(errors, 'weekendAvailability')}</small>}
               </div>
 
               <div className="field-section">
@@ -485,7 +518,20 @@ export default function App() {
                 </div>
               </div>
 
-              {status.message && <div className={`form-status ${status.type}`}>{status.message}</div>}
+              {status.message && (
+                <div className={`form-status ${status.type}`} role="alert">
+                  <p>{status.message}</p>
+                  {status.type === 'error' && Object.entries(errors).length > 0 && (
+                    <ul>
+                      {Object.entries(errors).map(([field, error]) => (
+                        <li key={field}>
+                          <strong>{validationFieldLabels[field] || field}:</strong> {fieldError(errors, field)}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              )}
 
               <button type="submit" className="primary-button form-submit" disabled={submitting}>
                 {submitting ? (
