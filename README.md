@@ -1,6 +1,6 @@
 # KEPHAS Young Builders Registration Portal
 
-A complete registration portal for KEPHAS Young Builders, built with React + Vite on the frontend and Node.js + Express on the backend. The application supports public registration, admin management, and secure email delivery workflow for a weekend online programme for children ages 10 to 19.
+A complete registration portal for KEPHAS Young Builders, built with React + Vite on the frontend and Node.js + Express on the backend. The application supports public registration, admin management, and secure email delivery workflow for a Saturday online programme for children ages 10 to 19.
 
 ## Programme facts
 
@@ -9,7 +9,7 @@ A complete registration portal for KEPHAS Young Builders, built with React + Vit
 - Delivery: Online
 - Age range: 10–19
 - Duration: 3 months
-- Schedule: Weekends
+- Schedule: Saturdays, 9:00 AM–3:00 PM
 - Fee: ₦35,000 per child
 - Free first session
 - Limited spots

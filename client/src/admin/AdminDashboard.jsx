@@ -190,7 +190,7 @@ export default function AdminDashboard() {
                 <Detail label="Technology access" value={selectedRegistration.technologyAccess} />
                 <Detail label="Personal device" value={selectedRegistration.hasDevice} />
                 <Detail label="Learning interests" value={selectedRegistration.learningInterests?.join(', ') || 'Not specified'} />
-                <Detail label="Weekend availability" value={selectedRegistration.weekendAvailability?.join(', ') || 'Not specified'} />
+                <Detail label="Class schedule" value={selectedRegistration.weekendAvailability?.join(', ') || 'Not specified'} />
                 <Detail label="Expectations" value={selectedRegistration.expectations || 'Not provided'} />
               </div>
               <div className="detail-group">

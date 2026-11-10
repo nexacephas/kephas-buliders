@@ -1063,6 +1063,59 @@ td {
   margin-bottom: 26px;
 }
 
+.payment-instructions {
+  margin: 0 0 22px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(17, 17, 17, 0.02);
+  text-align: left;
+}
+
+.payment-instructions h2 {
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+}
+
+.payment-instructions > p {
+  color: var(--muted);
+}
+
+.payment-instructions dl {
+  display: grid;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.payment-instructions dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.payment-instructions dt {
+  color: var(--muted);
+}
+
+.payment-instructions dd {
+  margin: 0;
+  font-weight: 700;
+  text-align: right;
+}
+
+.payment-instructions .payment-note {
+  font-size: 0.9rem;
+}
+
+.whatsapp-button {
+  margin: 0 0 12px;
+  background: #167447;
+}
+
+.whatsapp-button:hover {
+  background: #105e39;
+}
+
 .success-meta div {
   display: flex;
   flex-direction: column;

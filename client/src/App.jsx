@@ -29,7 +29,7 @@ const initialForm = {
   technologyAccess: 'at-home',
   hasDevice: 'yes',
   learningInterests: [],
-  weekendAvailability: [],
+  weekendAvailability: ['Saturday'],
   expectations: '',
   guardianConsent: false,
   mediaConsent: false,
@@ -46,8 +46,6 @@ const learningOptions = [
   'Problem Solving'
 ];
 
-const weekendOptions = ['Saturday', 'Sunday'];
-
 const validationFieldLabels = {
   parentFullName: 'Parent / guardian full name',
   parentEmail: 'Parent email',
@@ -60,7 +58,7 @@ const validationFieldLabels = {
   technologyAccess: 'Technology access',
   hasDevice: 'Personal device',
   learningInterests: 'Learning interests',
-  weekendAvailability: 'Weekend availability',
+  weekendAvailability: 'Class schedule',
   expectations: 'Expectations',
   guardianConsent: 'Guardian consent',
   privacyConsent: 'Privacy consent'
@@ -228,7 +226,7 @@ export default function App() {
       <main className="page-content">
         <section className="hero-section" id="top">
           <div className="hero-copy">
-            <p className="eyebrow">Online • Ages 10–19 • 3 months • Weekends</p>
+            <p className="eyebrow">Online • Ages 10–19 • Saturdays, 9 AM–3 PM</p>
             <h1>
               BUILD THE FUTURE.
               <span>START YOUNG.</span>
@@ -457,22 +455,12 @@ export default function App() {
 
               <div className="field-section">
                 <div className="field-header">
-                  <h3>Section E: Weekend Availability</h3>
-                  <p>Select the days that work best for your household.</p>
+                  <h3>Section E: Class Schedule</h3>
+                  <p>Classes are held on Saturdays from 9:00 AM to 3:00 PM.</p>
                 </div>
-
-                <div className="pill-grid">
-                  {weekendOptions.map((option) => (
-                    <button
-                      type="button"
-                      key={option}
-                      className={form.weekendAvailability.includes(option) ? 'pill active' : 'pill'}
-                      onClick={() => handleMultiSelect('weekendAvailability', option)}
-                      aria-pressed={form.weekendAvailability.includes(option)}
-                    >
-                      {option}
-                    </button>
-                  ))}
+                <div className="schedule-details">
+                  <strong>Saturday</strong>
+                  <span>9:00 AM–3:00 PM</span>
                 </div>
                 {fieldError(errors, 'weekendAvailability') && <small className="selection-error">{fieldError(errors, 'weekendAvailability')}</small>}
               </div>
