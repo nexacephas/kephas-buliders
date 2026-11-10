@@ -6,13 +6,15 @@ A complete registration portal for KEPHAS Young Builders, built with React + Vit
 
 - Programme: KEPHAS Young Builders
 - Focus: Web Development, AI & Online Safety
-- Delivery: Online
+- Delivery: Live online classes on Zoom
 - Age range: 10–19
 - Duration: 3 months
 - Schedule: Saturdays, 9:00 AM–3:00 PM
+- Requirements: Each student needs a laptop and stable internet
+- Capacity: Limited to 50 students
+- Updates and questions: WhatsApp group information after registration; questions via 08131495622
 - Fee: ₦35,000 per child
 - Free first session
-- Limited spots
 
 ## Features
 

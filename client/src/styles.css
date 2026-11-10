@@ -704,6 +704,16 @@ small {
   color: var(--error);
 }
 
+.form-contact {
+  color: var(--muted);
+  text-align: center;
+}
+
+.form-contact a {
+  color: #167447;
+  font-weight: 700;
+}
+
 .form-submit {
   width: 100%;
   justify-content: center;
@@ -1114,6 +1124,16 @@ td {
 
 .whatsapp-button:hover {
   background: #105e39;
+}
+
+.whatsapp-contact {
+  margin: 0 0 18px;
+  color: var(--muted);
+}
+
+.whatsapp-contact a {
+  color: #167447;
+  font-weight: 700;
 }
 
 .success-meta div {

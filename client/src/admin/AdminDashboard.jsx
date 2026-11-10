@@ -188,7 +188,8 @@ export default function AdminDashboard() {
               <div className="detail-group">
                 <h3>Programme</h3>
                 <Detail label="Technology access" value={selectedRegistration.technologyAccess} />
-                <Detail label="Personal device" value={selectedRegistration.hasDevice} />
+                <Detail label="Laptop available" value={selectedRegistration.hasDevice === 'yes' ? 'Yes' : 'No'} />
+                <Detail label="Stable internet confirmed" value={selectedRegistration.stableInternetConfirmed ? 'Yes' : 'No'} />
                 <Detail label="Learning interests" value={selectedRegistration.learningInterests?.join(', ') || 'Not specified'} />
                 <Detail label="Class schedule" value={selectedRegistration.weekendAvailability?.join(', ') || 'Not specified'} />
                 <Detail label="Expectations" value={selectedRegistration.expectations || 'Not provided'} />

@@ -28,6 +28,7 @@ const initialForm = {
   schoolLevel: '',
   technologyAccess: 'at-home',
   hasDevice: 'yes',
+  stableInternetConfirmed: false,
   learningInterests: [],
   weekendAvailability: ['Saturday'],
   expectations: '',
@@ -56,7 +57,8 @@ const validationFieldLabels = {
   childGender: 'Gender',
   schoolLevel: 'School level',
   technologyAccess: 'Technology access',
-  hasDevice: 'Personal device',
+  hasDevice: 'Laptop access',
+  stableInternetConfirmed: 'Stable internet',
   learningInterests: 'Learning interests',
   weekendAvailability: 'Class schedule',
   expectations: 'Expectations',
@@ -226,13 +228,13 @@ export default function App() {
       <main className="page-content">
         <section className="hero-section" id="top">
           <div className="hero-copy">
-            <p className="eyebrow">Online • Ages 10–19 • Saturdays, 9 AM–3 PM</p>
+            <p className="eyebrow">Zoom • Ages 10–19 • Saturdays, 9 AM–3 PM</p>
             <h1>
               BUILD THE FUTURE.
               <span>START YOUNG.</span>
             </h1>
             <p className="lead">
-              Give your child the opportunity to explore technology, build real websites, create with AI and develop the digital skills needed for tomorrow.
+              Give your child the opportunity to explore technology, build real websites, create with AI and develop the digital skills needed for tomorrow. Join live Zoom classes on Saturdays; each student needs a laptop and stable internet. Only 50 places are available.
             </p>
 
             <div className="hero-meta-grid">
@@ -268,7 +270,7 @@ export default function App() {
           <div className="hero-visual" aria-label="Young builders programme preview">
             <div className="visual-card main-card">
               <div className="visual-heading">
-                <div className="visual-badge">Limited spots</div>
+                <div className="visual-badge">Only 50 places</div>
                 <div className="floating-panel">FREE FIRST SESSION</div>
               </div>
               <div className="visual-stack">
@@ -407,27 +409,33 @@ export default function App() {
               <div className="field-section">
                 <div className="field-header">
                   <h3>Section C: Technology Access</h3>
-                  <p>We want to understand how your child will participate online.</p>
+                  <p>Classes are live on Zoom. Each student needs a laptop and stable internet.</p>
                 </div>
 
                 <div className="form-grid two-col">
                   <div className="field-wrap">
-                    <label>Technology Access</label>
+                    <label>Where will your child access the classes?</label>
                     <select name="technologyAccess" value={form.technologyAccess} onChange={handleChange}>
                       <option value="at-home">At home</option>
                       <option value="school">At school</option>
-                      <option value="shared-device">Shared device</option>
                     </select>
                   </div>
 
                   <div className="field-wrap">
-                    <label>Has Personal Device?</label>
+                    <label>Will your child have access to a laptop?</label>
                     <select name="hasDevice" value={form.hasDevice} onChange={handleChange}>
                       <option value="yes">Yes</option>
                       <option value="no">No</option>
-                      <option value="sometimes">Sometimes</option>
                     </select>
+                    {fieldError(errors, 'hasDevice') && <small>{fieldError(errors, 'hasDevice')}</small>}
                   </div>
+                </div>
+                <div className="checkbox-stack">
+                  <label className="check-row">
+                    <input type="checkbox" name="stableInternetConfirmed" checked={form.stableInternetConfirmed} onChange={handleChange} />
+                    <span>I confirm my child will have stable internet for the Zoom classes.</span>
+                  </label>
+                  {fieldError(errors, 'stableInternetConfirmed') && <small className="consent-error">{fieldError(errors, 'stableInternetConfirmed')}</small>}
                 </div>
               </div>
 
@@ -456,7 +464,7 @@ export default function App() {
               <div className="field-section">
                 <div className="field-header">
                   <h3>Section E: Class Schedule</h3>
-                  <p>Classes are held on Saturdays from 9:00 AM to 3:00 PM.</p>
+                  <p>Live Zoom classes are held on Saturdays from 9:00 AM to 3:00 PM. Only 50 places are available.</p>
                 </div>
                 <div className="schedule-details">
                   <strong>Saturday</strong>
@@ -520,6 +528,10 @@ export default function App() {
                   )}
                 </div>
               )}
+
+              <p className="form-contact">
+                Questions? <a href="https://wa.me/2348131495622?text=Hello%2C%20I%20have%20a%20question%20about%20KEPHAS%20Young%20Builders." target="_blank" rel="noopener noreferrer">WhatsApp 08131495622</a>
+              </p>
 
               <button type="submit" className="primary-button form-submit" disabled={submitting}>
                 {submitting ? (

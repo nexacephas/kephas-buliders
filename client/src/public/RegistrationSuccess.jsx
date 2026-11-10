@@ -16,7 +16,7 @@ export default function RegistrationSuccess() {
         <p className="success-kicker">Registration received</p>
         <h1>Thank you for registering.</h1>
         <p className="success-copy">
-          Your child’s registration has been received. We will review your submission and contact you with the next steps.
+          Your child’s registration has been received. Classes are held live on Zoom every Saturday from 9:00 AM to 3:00 PM. A WhatsApp group will be created for programme information; joining details will be shared after registration.
         </p>
         {reference && (
           <div className="reference-box">
@@ -35,7 +35,7 @@ export default function RegistrationSuccess() {
           <p className="payment-note">Use your registration reference as the payment narration so we can match your transfer.</p>
         </section>
         <div className="success-meta">
-          <div><span>Class schedule</span><strong>Saturday, 9:00 AM–3:00 PM</strong></div>
+          <div><span>Class schedule</span><strong>Zoom · Saturday, 9:00 AM–3:00 PM</strong></div>
           <div><span>Next steps</span><strong>Review and confirmation email</strong></div>
         </div>
         {reference && (
@@ -43,6 +43,9 @@ export default function RegistrationSuccess() {
             Send registration reference on WhatsApp
           </a>
         )}
+        <p className="whatsapp-contact">
+          Questions? <a href="https://wa.me/2348131495622?text=Hello%2C%20I%20have%20a%20question%20about%20KEPHAS%20Young%20Builders." target="_blank" rel="noopener noreferrer">Message us on WhatsApp: 08131495622</a>
+        </p>
         <Link className="primary-button" to="/">Return to the programme</Link>
       </section>
     </main>
