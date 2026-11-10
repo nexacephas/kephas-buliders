@@ -228,7 +228,7 @@ export default function App() {
       <main className="page-content">
         <section className="hero-section" id="top">
           <div className="hero-copy">
-            <p className="eyebrow">Online • Ages 10–17 • 3 months • Weekends</p>
+            <p className="eyebrow">Online • Ages 10–19 • 3 months • Weekends</p>
             <h1>
               BUILD THE FUTURE.
               <span>START YOUNG.</span>
@@ -244,7 +244,7 @@ export default function App() {
               </div>
               <div>
                 <span className="meta-label">Age</span>
-                <strong>10–17</strong>
+                <strong>10–19</strong>
               </div>
               <div>
                 <span className="meta-label">Fee</span>
